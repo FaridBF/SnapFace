@@ -1,0 +1,33 @@
+<div class="face-snap-card" [ngClass]="{snapped: buttonText === 'coucou tu as snapé'}">
+    <h2>{{ faceSnap.title | titlecase }}</h2>
+    <!-- <BR>
+    <p>{{ 4346234.36 | number: '1.0-1' }}</p>
+    <BR>
+    <p>{{ 0.336 | percent: '1.0-1'}}</p>
+    <BR>
+    <p>{{ 0.473 | percent}}</p>
+    <BR>
+    <p>{{ 334.36 |currency: "EUR" : 'code' }}</p>
+    <BR>
+    <p>{{ 700 |currency: "EUR"}}</p>
+    <BR>
+    <span>{{ "jungle" | uppercase }}</span>
+    <BR>
+    <span>{{ 122422.467 | number }}</span>
+    <BR>
+    <span>{{ "welcome to the jungle" | titlecase }}</span>
+    <BR>
+    <p>{{ faceSnap.createdDate | date: 'HH:mm' }}</p>
+    <BR>
+    <p>{{ faceSnap.createdDate | date: 'le d MMMM yyyy' }}</p>
+    <BR> -->
+    <p>Mis en ligne {{ faceSnap.createdDate | date: 'le dd/MM/yy'}}</p>
+    <BR>
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+    <p>{{ faceSnap.description }}</p>
+    <p *ngIf="faceSnap.location === 'paris'">Photo prise à {{faceSnap.location}}</p>
+    <p>
+        <button (click)="onSnap()">{{buttonText}}</button>
+        <span [ngStyle]="{color: 'rgb(0,'+ faceSnap.snaps + ', 0)'}">🤌 {{ faceSnap.snaps }}</span>
+    </p>
+</div>
